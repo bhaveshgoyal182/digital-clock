@@ -1,38 +1,112 @@
+body{
+  background-color: #1a1a1a;
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  color: white;
+  height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.App.light {
+  background-color: #f4f4f4;
+}
+.timeparent{
+  height: 175px;
+  width: 350px;
+  background: linear-gradient(145deg, #323232, #666666);
+  border: 2px solid white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out;
+}
+.controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.timeparent:hover{
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.time {
+  font-size: 70px;
+  font-weight: bold;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+  letter-spacing: 5px;
+  animation: blink 1.8s infinite ease-out;
+}
+.period{
+  font-size: 20px;
+}
+
+.icon-toggle, .format-toggle {
+  background-color: #333;
   color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.format-toggle {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.icon-toggle:hover, .format-toggle:hover {
+  background-color: #4caf50;
+  transform: scale(1.1);
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
   }
-  to {
-    transform: rotate(360deg);
+  25%, 75% {
+    opacity: 0.7;
+  }
+}
+
+
+@media only screen and (max-width: 500px) {
+  .timeparent {
+    height: 25%;
+    width: 80%;
+    padding: 15px;
+  }
+  .time {
+    font-size: 4rem;
+  }
+  .period {
+    font-size: 1.25rem;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .timeparent {
+    height: 20%;
+    width: 50%;
+    padding: 1rem;
+  }
+  .time {
+    font-size: 2rem;
+  }
+  .period {
+    font-size: 1rem;
   }
 }
